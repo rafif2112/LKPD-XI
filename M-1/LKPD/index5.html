@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            margin: 5px;
+            width: 200px;
+            height: 30px;
+            border: none;
+            background-color: rgb(136, 209, 26);
+            color: white;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: rgb(180, 180, 180);
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Hitung Mundur</h2>
+
+        <h1 id="count">10</h1>
+        
+        <button id="start" onclick="Start()">Mulai</button>
+        <button id="stop" onclick="Stop()" disabled>Stop</button>
+    </div>
+
+    <script>
+        const count = document.getElementById('count');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        let time = 10;
+        let timer = null;
+
+        function Start() {
+            count.style.color = 'black';
+            start.disabled = true;
+            stop.disabled = false;
+            count.textContent = time;
+
+            timer = setInterval(() => {
+                time--;
+                count.textContent = time;
+
+                if (time < 1) {
+                    count.style.color = 'red';
+                    count.textContent = 'Waktu Habis';
+                    clearInterval(timer);
+                    resetButtons();
+                    time = 10;
+                }
+            }, 1000);
+        }
+
+        function Stop() {
+            clearInterval(timer);
+            resetButtons();
+            count.textContent = time > 0 ? time : 10;
+        }
+
+        function resetButtons() {
+            start.disabled = false;
+            stop.disabled = true;
+        }
+    </script>
+</body>
+</html>

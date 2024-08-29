@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="opsi_1">ada rekomendasi?</label>
+        <div>
+        <select name="opsi_1" id="opsi_1" onchange="change1()">
+            <option disabled selected>pilih</option>
+            <option value="ada">Ada</option>
+            <option value="tidak">Tidak</option>
+        </select>
+        </div>
+
+        <div id="rekomendasi">
+            <label for="name-rekomen">name-rekomen</label><br>
+            <input type="text" name="name-rekomen" id="name-rekomen" >
+
+            <div>
+                <select name="opsi_2" id="opsi_2" onchange="change2()">
+                    <option disabled selected>pilih</option>
+                    <option value="pekerja">Pekerja BRI</option>
+                    <option value="purnabakti">Purnabakti</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="nomor-ID">nomor-ID</label><br>
+                <input type="number" name="nomor-ID" id="nomor-ID">
+            </div>
+
+            <div id="change">
+                <label for="jabatan">jabatan</label><br>
+                <input type="text" name="jabatan" id="jabatan">
+            </div>
+        </div>
+    </form>
+
+    <script>
+        inputChange = document.getElementById('rekomendasi')
+
+        function change1() {
+            if (document.getElementById('opsi_1').value == 'ada') {
+                inputChange.style.display = 'block'
+            } else {
+                inputChange.style.display = 'none'
+            }
+        }
+
+        function change2() {
+            if (document.getElementById('opsi_2').value == 'pekerja') {
+                document.getElementById('change').style.display = 'block'
+            } else {
+                document.getElementById('change').style.display = 'none'
+            }
+        }
+    </script>
+</body>
+</html>

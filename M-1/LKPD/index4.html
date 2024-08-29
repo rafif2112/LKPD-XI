@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img src="https://dummyimage.com/600x400/000/fff&text=Pilih+foto" alt="Pilih" id="img" width="400" height="400" style="border: 5px solid pink;">
+    <form>
+        <select name="image" id="image">
+            <option disabled selected>Pilih</option>
+            <option value="https://cdn.setirkanan.co.id/images/2023/05/02/0fccd2145f6f702bf1a634efc38217ec47ab7846/ezgif.com-gif-maker-(16).jpg">
+                Gambar 1
+            </option>
+            
+            <option value="https://auto2000.co.id/berita-dan-tips/_next/image?url=https%3A%2F%2Fastradigitaldigiroomuat.blob.core.windows.net%2Fstorage-uat-001%2Fmobil-offroad.jpg&w=1024&q=75">
+                Gambar 2
+            </option>
+    
+            <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJXgF6_LVdCnO7TL4h7lzTTvJnjfU50W4ydw&s">
+                Gambar 3
+            </option>
+        </select>
+
+        <select name="border" id="border">
+            <option disabled selected>Pilih warna border</option>
+            <option value="yellow">kuning</option>
+            <option value="blue">biru</option>
+            <option value="red">merah</option>
+        </select>
+
+        <select name="bentuk" id="bentuk">
+            <option disabled selected>Pilih bentuk</option>
+            <option value="lingkaran">lingkaran</option>
+            <option value="kotak">Kotak</option>
+            <option value="segitiga">Segitiga</option>
+        </select>
+
+        <button type="button" onclick="myFunction(this)">Submit</button>
+    </form>
+
+    <script>
+        function myFunction(e) {
+            let image = document.getElementById('image').value
+            let img = document.getElementById('img')
+            img.src = image
+
+            // border
+            const border = document.getElementById('border').value
+            img.style.border = `5px solid ${border}`
+
+            // bentuk
+            const bentuk = document.getElementById('bentuk').value
+            if (bentuk == 'lingkaran'){
+                img.style.borderRadius = '50%'
+                img.style.clipPath = 'none'
+            } else if (bentuk == 'kotak'){
+                img.style.borderRadius = '0px'
+                img.style.clipPath = 'none'
+            } else if (bentuk == 'segitiga'){
+                img.style.borderRadius = '0px'
+                img.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)'
+            }
+        }
+    </script>
+</body>
+</html>

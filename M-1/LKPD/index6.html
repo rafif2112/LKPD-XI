@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="date" name="date" id="date">
+        <button type="button" onclick="myFunction(this)">Submit</button>
+        <p id="text">Tidak Mencari data...</p>
+    </form>
+
+    <script>
+        const text = document.querySelector('#text')
+        function myFunction(e) {
+            const date = document.querySelector('input[name="date"]').value
+            if (date) {
+            const months = [
+                "januari",
+                "februari",
+                "maret",
+                "april",
+                "mei",
+                "juni",
+                "juli",
+                "agustus",
+                "september",
+                "oktober",
+                "november",
+                "desember",
+            ];
+            const day = date.slice(8, 10);
+            const month = months[date.slice(6, 7) - 1];
+            const year = date.slice(0, 4);
+            text.innerHTML = `Mencari Data tanggal <span style="color: blue">${day} ${month} ${year}</span>...`
+            }
+        }
+    </script>
+</body>
+</html>
