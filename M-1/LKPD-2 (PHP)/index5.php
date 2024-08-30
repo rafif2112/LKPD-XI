@@ -3,7 +3,8 @@
     $bil2 = [77, 99, 55, 81, 45, 90, 91, 98];
 
     $bil_merge = array_merge($bil1, $bil2);
-    rsort($bil_merge);
+    $bil_unique = array_unique($bil_merge);
+    rsort($bil_unique);
 
-    echo "Hasil : " . implode(", ", $bil_merge);
+    echo "Hasil : " . implode(", ", $bil_unique);
 ?>

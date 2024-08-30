@@ -1,10 +1,10 @@
 <?php 
 for ($a = 1; $a <= 2; $a++) {
-    for ($b = 1; $b <= 32; $b++) {
-        echo "*";
-        if ($b % 8 == 0) {
-            echo "<br>";
+    for ($b = 1; $b <= 4; $b++) {
+        for ($c = 1; $c <= 8; $c++) {
+            echo "*";
         }
+        echo "<br>";
     }
     echo "<br>";
 }

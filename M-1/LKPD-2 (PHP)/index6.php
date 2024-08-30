@@ -24,9 +24,9 @@
     foreach ($barang as $key => $value) {
         $total = $value['harga_barang'] * $value['jumlah_beli'];
         $total_harga += $total;
-        echo ($key + 1) . ". " . $value['nama_barang'] . " : " . number_format($total, 0, ',', '.') . "<br>";
+        echo ($key + 1) . ". " . $value['nama_barang'] . " (" . $value['jumlah_beli'] . ")" . " : <b>Rp. " . number_format($total, 0, ',', '.') . "</b><br>";
     }
     
-    echo "Total Harga Yang Harus dibayar adalah : <b>Rp." . number_format($total_harga, 0, ',', '.') . "</b>";
+    echo "Total Harga Yang Harus dibayar adalah : <b>Rp. " . number_format($total_harga, 0, ',', '.') . "</b>";
 ?>
 
