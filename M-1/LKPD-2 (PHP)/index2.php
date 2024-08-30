@@ -1,35 +1,11 @@
 <?php
-$hari = date("D");
+$hari = date("l");
 $total_belanja = 130000;
 
-switch ($hari) {
-    case 'Sun':
-        $hari = "Minggu";
-        break;
-    case 'Mon':
-        $hari = "Senin";
-        break;
-    case 'Tue':
-        $hari = "Selasa";
-        break;
-    case 'Wed':
-        $hari = "Rabu";
-        break;
-    case 'Thu':
-        $hari = "Kamis";
-        break;
-    case 'Fri';
-        $hari = "Jumat";
-        break;
-    case 'Sat':
-        $hari = "Sabtu";
-        break;  
-}
-
-if ($hari == "Selasa" && $total_belanja > 100000) {
+if ($hari == "Tuesday" && $total_belanja > 100000) {
     $diskon = $total_belanja * (7/100 + 5/100);
     $total_bayar = $total_belanja - $diskon;
-} else if ($hari == "Selasa") {
+} else if ($hari == "Tuesday") {
     $diskon = $total_belanja * 5/100;
     $total_bayar = $total_belanja - $diskon;
 } else if ($total_belanja > 100000) {
